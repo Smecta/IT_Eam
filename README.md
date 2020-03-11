@@ -20,6 +20,29 @@ device_user 设备使用人      字符串
 device_location 设备位置    字符串
 remark 其他                 字符串
 
+
+
+git 同步方法：
+1. git add .
+1. git commit -am "初始化"
+1. git remote add it_eam git@github.com:Smecta/IT_Eam
+1. git push -u it_eam master
+
 初始化项目
+在根目录
+安装 vue  需要 npm i -g @vue/cli
+vue create web 
+vue create admin 
+mkdir server
+      所有nodejs 服务端项目，后台管理页面提供的接口，后台web页面提供的接口
+初始化后端服务端 server 
+    npm init -y  自动生成packgae.json
+    新建入口文件，index.js
+    使用 npm run serve 来进行启动服务端，在package.json 里面的脚本scripts标签下 添加
+    "serve": "nodemon index.js",
+    nodemon 安装需要 npm i -g nodemon 
+    npm run serve 启动项目
 
 
+后台搭建
+  
