@@ -45,4 +45,6 @@ mkdir server
 
 
 后台搭建
-  
+  cd server
+安装 npm i express@next mongoose cors 
+一次安装 express 下一个版本，和mongoose 和解决跨域请求的cors
