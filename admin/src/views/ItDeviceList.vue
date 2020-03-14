@@ -10,11 +10,14 @@
       ></el-input>
     </div>
     <el-table
-      :data="tableData.slice((currentPage - 1) * pagesize, currentPage * pagesize)"
+      :data="
+        tableData.slice((currentPage - 1) * pagesize, currentPage * pagesize)
+      "
     >
       <!-- <el-table-column prop="_id" label="ID" width="240"> </el-table-column> -->
       <!-- <el-table-column prop="parent.name" label="上级分类"> </el-table-column> -->
-      <el-table-column prop="device_number" label="设备编号"> </el-table-column>
+      <el-table-column prop="device_number" label="设备编号" sortable>
+      </el-table-column>
       <el-table-column prop="device_name" label="设备名称"> </el-table-column>
       <el-table-column prop="device_count" label="设备数量"> </el-table-column>
       <!-- <el-table-column prop="device_unit" label="设备单位"> </el-table-column> -->
@@ -22,7 +25,7 @@
       <el-table-column prop="device_user" label="使用人员"> </el-table-column>
       <el-table-column prop="device_department" label="使用部门">
       </el-table-column>
-      <el-table-column prop="record_date" label="登记日期">
+      <el-table-column prop="record_date" label="登记日期" sortable>
         <template slot-scope="scope">{{
           scope.row.record_date | dateYMDFormat
         }}</template>
@@ -65,7 +68,7 @@ export default {
       searchTableInfo: "",
       currentPage: 1,
       pagesize: 10,
-      items: [],
+      items: []
     };
   },
   methods: {
@@ -137,5 +140,9 @@ export default {
   text-align: right;
   margin-top: 2rem;
   margin-right: 2rem;
+}
+
+.el-table .warning-row {
+  background: oldlace;
 }
 </style>

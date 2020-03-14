@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Home from '../views/Home.vue'
+import Login from '../views/Login.vue'
 import Main from '../views/Main.vue'
 // 设备分类路由
 import DeviceCategoryEdit from '../views/DeviceCategoryEdit.vue'
@@ -12,10 +12,14 @@ import DeviceUnitList from '../views/DeviceUnitList.vue'
 import ItDeviceEdit from '../views/ItDeviceEdit.vue'
 import ItDeviceList from '../views/ItDeviceList.vue'
 
+import AdminUserEdit from '../views/AdminUserEdit.vue'
+import AdminUserList from '../views/AdminUserList.vue'
+
 
 Vue.use(VueRouter)
 
 const routes = [
+  {path:'/login', name:'login', component:Login},
   {
     path: '/',
     name: 'Main',
@@ -32,6 +36,10 @@ const routes = [
       { path: '/itDevices/create', component: ItDeviceEdit },
       { path: '/itDevices/edit/:id', component: ItDeviceEdit, props: true },
       { path: '/itDevices/list', component: ItDeviceList },
+
+      { path: '/admin_users/create', component: AdminUserEdit },
+      { path: '/admin_users/edit/:id', component: AdminUserEdit, props: true },
+      { path: '/admin_users/list', component: AdminUserList },
 
     ]
   },
