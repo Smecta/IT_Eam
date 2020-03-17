@@ -67,3 +67,65 @@ npm i inflection
 ## 待更新
 1. 修复年限为分类属性
 3. 添加列表排序功能
+
+
+# 部署
+npm run build 
+默认生成 dist
+
+配置 vue.config.js
+outputDir: __dirname + '/../server/admin',  
+设置导出路径为server下根目录名字为admin文件夹
+
+
+# 安装数据库及其他
+
+ubuntu 19.10 live-server aliyun OS 
+
+输入sudo passwd，会提示输入自己的密码、紧接着是设置root用户的密码、再次确认root用户的密码
+需要登录时，输入su再输入root的密码即可切换到root用户
+
+apt show mongodb-server
+查看mongodb-server 的版本
+apt install -y mongodb-server 
+
+apt install nodejs
+
+apt install npm 
+
+配置淘宝镜像
+npm config set registry https://registry.npm.taobao.org
+
+npm i -g nrm
+快速切换npm镜像的工具
+nrm current
+查看当前镜像源
+
+nrm use npm 切换npm官方源
+
+nrm use taobao 切换淘宝源
+
+安装pm2
+npm i -g pm2 全局安装pm2包
+
+进入相关文件夹下
+运行 pm2 start index.js --name 
+--name 可加不可加，无所谓起个名字
+查看logs
+pm2 logs index 
+
+查看列表
+pm2 list
+
+
+启动完毕后，可以使用curl 访问localhost3000
+请求访问
+curl http://localhost:3000
+
+
+安装
+初始化数据库
+mongodump -d it_eam
+
+恢复数据库
+mongorestore
